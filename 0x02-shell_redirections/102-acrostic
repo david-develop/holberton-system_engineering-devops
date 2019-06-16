@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c1 < acrostic
+cut -c1 | fmt -u
