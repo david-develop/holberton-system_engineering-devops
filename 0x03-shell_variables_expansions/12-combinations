@@ -1,0 +1,2 @@
+3!/bin/bash
+echo {a..z}{z..a} | tr "\ " "\n" | sort | grep -v 'oo'
