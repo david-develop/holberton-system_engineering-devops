@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#  Bash script that configures a new Ubuntu machine with Nginx
+
+ssh -i ~/.ssh/holberton ubuntu@34.74.113.207 'sudo apt-get update; sudo apt-get -y install nginx'
+ssh -i ~/.ssh/holberton ubuntu@34.74.113.207 'echo "Holberton School" | sudo tee /var/www/html/index.html'
