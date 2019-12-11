@@ -6,7 +6,6 @@ exec {'update':
 }
 
 exec { 'config redirect':
-  command  => 'redir_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"\
-  && sudo sed -i "s/server_name _;/$redir_str/" /etc/nginx/sites-available/default ; sudo service nginx restart',
+  command  => 'redir_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;" ; sudo sed -i "s/server_name _;/$redir_str/" /etc/nginx/sites-available/default ; sudo service nginx restart',
   provider => shell,
 }
