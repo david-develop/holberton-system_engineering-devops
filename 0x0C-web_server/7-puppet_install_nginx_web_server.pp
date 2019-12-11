@@ -6,10 +6,9 @@ exec { 'update':
   user    => root,
 }
 
-exec { 'install':
-  command => 'apt-get -y install nginx',
-  path    => ['/usr/bin', '/bin'],
-  user    => root,
+package { 'nginx':
+  ensure => installed,
+  name   => 'nginx',
 }
 
 exec { 'createfile':
@@ -18,11 +17,11 @@ exec { 'createfile':
   user    => root,
 }
 
-file_line { 'redirect':
-  ensure => present,
-  path   => '/etc/nginx/sites-available/default',
-  line   => "\tserver_name _;\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;",
-  match  => '^*server_name _;',
+exec {'config redirect':
+  command  => 'redir_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;" && sed -i "s/serve\
+r_name _;/$redir_str/" /etc/nginx/sites-available/default',
+  provider => shell,
+  user => root,
 }
 
 exec { 'restart':
