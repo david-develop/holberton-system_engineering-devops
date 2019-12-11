@@ -5,15 +5,10 @@ exec {'update':
   provider => shell,
 }
 
-exec {'install':
-  command  => 'sudo apt-get -y install nginx',
-  provider => shell,
+package { 'nginx':
+  ensure => installed,
+  name   => 'nginx',
 }
-
-# package { 'nginx':
-#   ensure => installed,
-#   name   => 'nginx',
-# }
 
 exec { 'createfile':
   command  => 'echo "Holberton School" | sudo tee /var/www/html/index.html',
