@@ -9,9 +9,9 @@ redi_str="server_name _;\n\trewrite ^\/redirect_me$ https:\/\/www.youtube.com\/w
 sudo sed -i "s/server_name _;/$redi_str/" /etc/nginx/sites-available/default
 
 error_str="Ceci n'est pas une page\n"
-echo -e "$error_str" | sudo tee /usr/share/nginx/html/404_error.html
+echo -e "$error_str" | sudo tee /var/www/html/404_error.html
 
-error_str="server_name _;\n\terror_page 404 \/404_error.html;\n\tlocation = \/404_error.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
+error_str="server_name _;\n\terror_page 404 \/404_error.html;\n\tlocation = \/404_error.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$error_str/" /etc/nginx/sites-available/default
 
 sudo service nginx restart
