@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Bash script that configure Nginx so that its HTTP response contains a custom header
+
+header_str="location \/ {\n\t\tadd_header X-Served-By \$hostname;"
+sudo sed -i "s/location \/ {/$header_str/" /etc/nginx/sites-available/default
+
+sudo service nginx restart
