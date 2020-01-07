@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash scripts that take one user as argument and execute whoami as it
+
+OTHER_USER=$1
+
+if [[ "$(whoami)" != "$OTHER_USER" ]]
+then
+        sudo -u $OTHER_USER whoami
+else
+        whoami
+fi
