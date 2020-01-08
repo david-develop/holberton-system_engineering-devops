@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Fix container so that Nginx is running as the nginx user
-sudo chmod u+rw /etc/nginx/nginx.conf
-sudo sed -i "1s/.*/user nginx;/" /etc/nginx/nginx.conf
-sudo sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
-sudo pkill -o apache2
-sudo service nginx restart
+sudo chmod uo+rw /etc/nginx/nginx.conf
+sudo chown nginx:nginx -R /etc/nginx/
+sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
+pkill -o apache2
+su nginx -c "service nginx restart"
