@@ -20,3 +20,6 @@
 - 1-export_to_CSV.py: extend Python script to export data in the CSV format.
 - 2-export_to_JSON.py: extend Python script to export data in the JSON format.
 - 3-dictionary_of_list_of_dictionaries.py: extend your Python script to export data in the JSON format.
+
+## Description
+Python scripts that interact with the REST API -> https://jsonplaceholder.typicode.com/
