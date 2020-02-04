@@ -12,21 +12,21 @@ if __name__ == "__main__":
     all_user_json = requests.get(url_all_user)
     all_users_dict = all_user_json.json()
 
-    # Each user data
     usr_to_dict = {}
+    # Each user data
     for user_dict in all_users_dict:
         user_name = user_dict.get('username')
         usr_id = str(user_dict.get('id'))
 
         # TODOS data
-        url_todos = 'https://jsonplaceholder.typicode.com/todos?userId=' + usr_id
+        url_todos = 'https://jsonplaceholder.'\
+                    'typicode.com/todos?userId=' + usr_id
         todos_json = requests.get(url_todos)
         todos_dict = todos_json.json()
 
-        data_dict = {}
-
         usr_to_dict[usr_id] = []
         for task in todos_dict:
+            data_dict = {}
             data_dict['task'] = task.get('title')
             data_dict['completed'] = task.get('completed')
             data_dict['username'] = user_name
