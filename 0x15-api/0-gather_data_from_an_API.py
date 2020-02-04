@@ -26,7 +26,7 @@ if __name__ == "__main__":
             title_list.append(task.get('title'))
         tasks_c += 1
 
-    print("Employee {} is done with tasks:({}/{})".
+    print("Employee {} is done with tasks:({}/{}):".
           format(user_dict.get('name'),
                  completed_c,
                  tasks_c))
