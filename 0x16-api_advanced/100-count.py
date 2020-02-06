@@ -39,8 +39,15 @@ def count_words(subreddit, word_list, after="", to_print={}):
             sorted_l = sorted(to_print.items(), key=lambda x: x[1])
             sorted_l.reverse()
 
+            flag = 0
+
             for x in sorted_l:
                 if x[1] != 0:
+                    flag = 1
                     print("{}: {}".format(x[0], x[1]))
+            
+            if flag == 0:
+                print()
 
-    return None
+    else:
+        print()
