@@ -2,6 +2,19 @@
 
 This is the module of System engineering and Devops, created during Full Stack Software Engineering program at Holberton School. The objective was create a complete Web Infrastructure.
 
+## Technologies:
+- Linux
+- Python - Flask
+- Puppet
+- Gunicorn
+- Shell - Bash
+- Nginx
+- SSH
+- SSL
+- HAproxy - Load Balancer
+- ufw - Firewall
+- Datadog
+
 ## PROJECTS:
 
 | Project | Description |
@@ -34,5 +47,3 @@ This is the module of System engineering and Devops, created during Full Stack S
 | [`0x19-postmortem`](https://github.com/david-develop/holberton-system_engineering-devops/tree/master/0x19-postmortem) | A postmortem report related with debbiging issue |
 | [`0x1A-application_server`](https://github.com/david-develop/holberton-system_engineering-devops/tree/master/0x1A-application_server) | Setting a **Flask-Python** applicaton in the server, conecting the API with the Frontend with **Gunicorn** |
 | [`0x1B-web_stack_debugging_4`](https://github.com/david-develop/holberton-system_engineering-devops/tree/master/0x1B-web_stack_debugging_4) | Debugging challenges |
-
-
